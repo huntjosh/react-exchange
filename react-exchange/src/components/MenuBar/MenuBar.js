@@ -11,6 +11,7 @@ const styles = theme => ({
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
+    // We reuse the theme level style for generic padding to avoid duplication
     marginBottom: theme.mediumPadding,
   },
   menuBar: {
@@ -18,6 +19,7 @@ const styles = theme => ({
   },
 });
 
+// Uses a config object so that we can easily modify the menu bar buttons
 const Links = [
   {
     url: RouteURLs.OverTime,
@@ -32,6 +34,8 @@ const Links = [
 const MenuBar = props => (
   <Row justify="center" className={props.classes.menuBar}>
     {
+      // We need to be careful using the url as the key here, which would be a problem
+      // if we had duplicate button/url combos
       Links.map(link =>
         (
           <LinkButton className={props.classes.button} to={link.url} key={link.url}>

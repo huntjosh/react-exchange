@@ -6,7 +6,7 @@ import { Button } from 'antd';
 const LinkButton = (props) => {
   const {
     history,
-    location,
+    location, // We name these fields so that we don't pass them unexpectedly into the button
     match,
     staticContext,
     to,

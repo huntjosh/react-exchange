@@ -20,6 +20,7 @@ const styles = () => ({
   },
 });
 
+// We use a functional component because we don't need any state
 function app(props) {
   return (
     <ThemeProvider theme={Theme}>
