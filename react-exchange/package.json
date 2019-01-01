@@ -1,0 +1,38 @@
+{
+  "name": "react-exchange",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/styles": "^3.0.0-alpha.6",
+    "antd": "^3.11.6",
+    "babel": "^6.23.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-jss": "^10.0.0-alpha.5",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.2",
+    "redux": "^4.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.4.0"
+  }
+}
