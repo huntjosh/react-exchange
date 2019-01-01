@@ -17,19 +17,21 @@ const styles = () => ({
   },
   routes: {
     height: '100%',
+    padding: Theme.mediumPadding,
+    paddingLeft: 0,
   },
 });
 
 // We use a functional component because we don't need any state
-function app(props) {
+function App(props) {
   return (
     <ThemeProvider theme={Theme}>
       <BrowserRouter>
         <div className={props.classes.app}>
-          <Col span={7} className={props.classes.menuBar}>
+          <Col span={4} className={props.classes.menuBar}>
             <MenuBar />
           </Col>
-          <Col span={17} className={props.classes.routes}>
+          <Col span={20} className={props.classes.routes}>
             <Routes />
           </Col>
         </div>
@@ -38,9 +40,9 @@ function app(props) {
   );
 }
 
-app.propTypes = {
+App.propTypes = {
   // Override Because we define this object in this file
   classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
-export default withStyles(styles)(app);
+export default withStyles(styles)(App);

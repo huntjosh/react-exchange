@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // Screens are just a composition of components, with minimal logic
-class PageNotFound extends Component {
+class SpecificDateRates extends Component {
   render() {
     return (
-      <div className="not-found">
-        Page Not Found
+      <div className="specific-date">
+        SpecificDate
       </div>
     );
   }
 }
 
-PageNotFound.propTypes = {};
+SpecificDateRates.propTypes = {};
 
-export default PageNotFound;
+export default SpecificDateRates;

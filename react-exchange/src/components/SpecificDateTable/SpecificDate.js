@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class SpecificDate extends Component {
   render() {
     return (
-      <div className="specific-date">
-        SpecificDate
+      <div>
+        Specific Date
       </div>
     );
   }

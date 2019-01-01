@@ -1,16 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { Row, Col, Card } from 'antd';
+import Rate from '../../../models/Rate';
 
-class CurrencyRow extends Component {
-  render() {
-    return (
-      <div>
-        Currency Row
-      </div>
-    );
-  }
+export default function CurrencyRow(props) {
+  const { rate } = props;
+  return (
+    <Card>
+      <Row>
+        <Col span={6} offset={6}>
+          {rate.label}
+        </Col>
+        <Col span={6} offset={6}>
+          ${rate.value}
+        </Col>
+      </Row>
+    </Card>
+  );
 }
 
-CurrencyRow.propTypes = {};
-
-export default CurrencyRow;
+CurrencyRow.propTypes = {
+  rate: Rate.propTypeStructure.isRequired,
+};
