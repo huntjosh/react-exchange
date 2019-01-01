@@ -1,9 +1,12 @@
 import React from 'react';
 import { Col } from 'antd';
 import withStyles from '@material-ui/styles/withStyles';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 import MenuBar from './components/MenuBar/MenuBar';
 import Routes from './Routes';
+import Theme from './Theme';
 
 const styles = () => ({
   app: {
@@ -19,14 +22,18 @@ const styles = () => ({
 
 function app(props) {
   return (
-    <div className={props.classes.app}>
-      <Col span={7} className={props.classes.menuBar}>
-        <MenuBar />
-      </Col>
-      <Col span={17} className={props.classes.routes}>
-        <Routes />
-      </Col>
-    </div>
+    <ThemeProvider theme={Theme}>
+      <BrowserRouter>
+        <div className={props.classes.app}>
+          <Col span={7} className={props.classes.menuBar}>
+            <MenuBar />
+          </Col>
+          <Col span={17} className={props.classes.routes}>
+            <Routes />
+          </Col>
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

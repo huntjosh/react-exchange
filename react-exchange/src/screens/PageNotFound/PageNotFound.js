@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class PageNotFound extends Component {
   render() {
     return (
-      <div>
+      <div className="not-found">
         Page Not Found
       </div>
     );

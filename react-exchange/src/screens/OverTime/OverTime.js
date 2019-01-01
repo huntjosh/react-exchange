@@ -5,10 +5,10 @@ import CurrencyTable from '../../components/CurrencyTable/CurrencyTable';
 class OverTime extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="over-time">
         <PageHeader title="Over Time" />
         <CurrencyTable />
-      </React.Fragment>
+      </div>
     );
   }
 }
