@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import PageHeader from '../../components/UI/PageHeader/PageHeader';
 
 // Screens are just a composition of components, with minimal logic
-class PageNotFound extends Component {
-  render() {
-    return (
-      <div className="not-found">
-        Page Not Found
-      </div>
-    );
-  }
+function RatesOverTime() {
+  return (
+    <React.Fragment>
+      <PageHeader title="Exchange Rates" />
+      Page Not Found
+    </React.Fragment>
+  );
 }
 
-PageNotFound.propTypes = {};
-
-export default PageNotFound;
+export default RatesOverTime;

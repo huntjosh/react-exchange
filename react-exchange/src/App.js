@@ -17,7 +17,7 @@ const styles = () => ({
   },
   routes: {
     height: '100%',
-    padding: Theme.mediumPadding,
+    padding: Theme.mediumSpacing,
     paddingLeft: 0,
   },
 });

@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
+import { Row, Col, Card, Select } from 'antd';
 import { withStyles } from '@material-ui/styles';
 import CurrencyTable from '../CurrencyTable/CurrencyTable';
 import ExchangeRates from '../../api/ExchangeRates';
 
-const styles = () => ({
+const { Option } = Select;
+
+const orderOptions = [
+  { value: 'desc', label: 'Descending' },
+  { value: 'asc', label: 'Ascending' },
+];
+
+const styles = theme => ({
   header: {
     textAlign: 'center',
+  },
+  orderSelect: {
+    width: 150,
+    marginBottom: theme.mediumSpacing,
   },
 });
 
@@ -19,15 +31,6 @@ const TransformRatesPerDate = ratesPerDate =>
       value: ratesPerDate[key].USD,
     }));
 
-const SortDates = (firstDate, secondDate, isDesc = true) => {
-  const firstDateSeconds = moment(firstDate).valueOf();
-  const secondDateSeconds = moment(secondDate).valueOf();
-
-  return isDesc
-    ? secondDateSeconds - firstDateSeconds
-    : firstDateSeconds - secondDateSeconds;
-};
-
 class RatesOverTime extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +39,7 @@ class RatesOverTime extends Component {
       // We need to set a default, because the initial render occurs before
       // componentDidMount executes
       ratesPerDate: [],
+      order: 'desc',
     };
   }
 
@@ -47,18 +51,46 @@ class RatesOverTime extends Component {
       });
   }
 
+  sortDates = (firstDate, secondDate) => {
+    const firstDateSeconds = moment(firstDate).valueOf();
+    const secondDateSeconds = moment(secondDate).valueOf();
+
+    return this.state.order === 'desc'
+      ? secondDateSeconds - firstDateSeconds
+      : firstDateSeconds - secondDateSeconds;
+  };
+
   orderedRatesPerDate() {
     return this.state.ratesPerDate.sort((firstDateRate, secondDateRate) =>
-      SortDates(firstDateRate.date, secondDateRate.date));
+      this.sortDates(firstDateRate.date, secondDateRate.date));
   }
+
+  handleOrderChange = (value) => {
+    this.setState({ order: value });
+  };
 
   render() {
     const { classes } = this.props;
     return (
-      <React.Fragment>
+      <Card>
         <h3 className={classes.header}>Euro £1 vs USD</h3>
+        <Row>
+          <Col span={3}>
+            Order Date:
+          </Col>
+          <Col span={4}>
+            <Select
+              defaultValue={this.state.order}
+              className={classes.orderSelect}
+              onChange={this.handleOrderChange}
+            >
+              { orderOptions.map(option =>
+                <Option value={option.value} key={option.value}>{option.label}</Option>)}
+            </Select>
+          </Col>
+        </Row>
         <CurrencyTable rates={this.orderedRatesPerDate()} />
-      </React.Fragment>
+      </Card>
     );
   }
 }

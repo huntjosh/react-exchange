@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import PageHeader from '../../components/UI/PageHeader/PageHeader';
 
 // Screens are just a composition of components, with minimal logic
-class SpecificDateRates extends Component {
-  render() {
-    return (
-      <div className="specific-date">
-        SpecificDate
-      </div>
-    );
-  }
+function SpecificDateRates() {
+  return (
+    <React.Fragment>
+      <PageHeader title="Exchange Rates Date" />
+      <SpecificDateRates />
+    </React.Fragment>
+  );
 }
-
-SpecificDateRates.propTypes = {};
 
 export default SpecificDateRates;

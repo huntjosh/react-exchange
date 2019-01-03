@@ -12,10 +12,10 @@ const styles = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     // We reuse the theme level style for generic padding to avoid duplication
-    marginBottom: theme.mediumPadding,
+    marginBottom: theme.mediumSpacing,
   },
   menuBar: {
-    paddingTop: theme.mediumPadding,
+    paddingTop: theme.mediumSpacing,
   },
 });
 
