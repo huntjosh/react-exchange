@@ -17,4 +17,15 @@ async function overTime() {
   };
 }
 
-export default { overTime };
+async function specificDate() {
+  return {
+    rates: {
+      USD: 1.2388,
+      NZD: 2.311,
+      YUAN: 8.920,
+      AUD: 2.290,
+    },
+  };
+}
+
+export default { overTime, specificDate };
