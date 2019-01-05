@@ -44,6 +44,10 @@ class SpecificDateRates extends Component {
       });
   }
 
+  handleDatePickerChange = (date) => {
+    this.setState(date);
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -54,7 +58,11 @@ class SpecificDateRates extends Component {
             Date:
           </Col>
           <Col span={4}>
-            <DatePicker defaultValue={this.state.date} className={classes.datePicker} />
+            <DatePicker
+              defaultValue={this.state.date}
+              className={classes.datePicker}
+              onChange={this.handleDatePickerChange}
+            />
           </Col>
         </Row>
         <CurrencyTable rates={this.state.rates} />
@@ -67,6 +75,5 @@ SpecificDateRates.propTypes = {
   // Override Because we define this object in this file
   classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
-
 
 export default withStyles(styles)(SpecificDateRates);

@@ -26,9 +26,9 @@ const styles = theme => ({
 // Is a constant function because it's effectively a static function
 const TransformRatesPerDate = ratesPerDate =>
   Object.keys(ratesPerDate)
-    .map(key => ({
-      label: key,
-      value: ratesPerDate[key].USD,
+    .map(date => ({
+      label: date,
+      value: ratesPerDate[date].USD,
     }));
 
 class RatesOverTime extends Component {
@@ -62,7 +62,7 @@ class RatesOverTime extends Component {
 
   orderedRatesPerDate() {
     return this.state.ratesPerDate.sort((firstDateRate, secondDateRate) =>
-      this.sortDates(firstDateRate.date, secondDateRate.date));
+      this.sortDates(firstDateRate.label, secondDateRate.label));
   }
 
   handleOrderChange = (value) => {
@@ -89,7 +89,7 @@ class RatesOverTime extends Component {
             </Select>
           </Col>
         </Row>
-        <CurrencyTable rates={this.orderedRatesPerDate()} />
+        <CurrencyTable rates={this.orderedRatesPerDate()} key={this.state.order} />
       </Card>
     );
   }
