@@ -61,6 +61,7 @@ class RatesOverTime extends Component {
   }
 
   updateRatesPerDate() {
+    // Just picking an arbitrary 4 days, as we want to make sure the data exists in the API
     ExchangeRates.overTime(
       moment().subtract(6, 'days'),
       moment().subtract(2, 'days'),
@@ -99,19 +100,6 @@ class RatesOverTime extends Component {
   handleVsCurrencyChange = (value) => {
     this.setState({ vsCurrency: value });
   };
-
-  currencySelect = (excludedCurrency, defaultValue, onChange) => (
-    <Select
-      defaultValue={defaultValue}
-      onChange={onChange}
-      className={this.props.classes.currencySelect}
-    >
-      {Object.values(ExchangeRates.currencies)
-        .filter(currency => currency !== excludedCurrency)
-        .map(currency => <Option key={currency} value={currency}>{currency}</Option>)
-      }
-    </Select>
-  );
 
   currencySelects() {
     const { classes } = this.props;
