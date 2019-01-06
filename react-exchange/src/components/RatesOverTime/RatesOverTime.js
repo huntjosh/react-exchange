@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Row, Col, Card, Select } from 'antd';
+import { Row, Col, Card, Select, Spin } from 'antd';
 import { withStyles } from '@material-ui/styles';
 import CurrencyTable from '../UI/CurrencyTable/CurrencyTable';
 import ExchangeRates from '../../api/ExchangeRates';
@@ -15,12 +15,17 @@ const orderOptions = [
 ];
 
 const styles = theme => ({
-  header: {
+  centeredContent: {
     textAlign: 'center',
   },
   orderSelect: {
     width: 150,
     marginBottom: theme.mediumSpacing,
+  },
+  centered: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
   },
 });
 
@@ -35,7 +40,7 @@ class RatesOverTime extends Component {
       order: 'desc',
       baseCurrency: ExchangeRates.currencies.EUR,
       vsCurrency: ExchangeRates.currencies.USD,
-      // todo add loading
+      loading: true,
     };
   }
 
@@ -71,6 +76,7 @@ class RatesOverTime extends Component {
       .then((response) => {
         this.setState({
           ratesPerDate: this.transformRatesPerDate(response.rates),
+          loading: false,
         });
       });
   }
@@ -94,18 +100,17 @@ class RatesOverTime extends Component {
   };
 
   handleBaseCurrencyChange = (value) => {
-    this.setState({ baseCurrency: value });
+    this.setState({ baseCurrency: value, loading: true });
   };
 
   handleVsCurrencyChange = (value) => {
-    this.setState({ vsCurrency: value });
+    this.setState({ vsCurrency: value, loading: true });
   };
 
   currencySelects() {
     const { classes } = this.props;
     return (
-      <div className={classes.header}>
-        Currency:
+      <div className={classes.centeredContent}>
         <CurrencyPicker
           defaultValue={this.state.baseCurrency}
           onChange={this.handleBaseCurrencyChange}
@@ -147,9 +152,13 @@ class RatesOverTime extends Component {
     return (
       <Card>
         {this.currencySelects()}
-        <h3 className={classes.header}>{this.state.baseCurrency} $1</h3>
+        <h3 className={classes.centered}>{this.state.baseCurrency} $1</h3>
         {this.orderSelect()}
-        <CurrencyTable rates={this.orderedRatesPerDate()} key={this.state.order} />
+        {this.state.loading
+          ? <div className={classes.centered}><Spin /></div>
+          : <CurrencyTable rates={this.orderedRatesPerDate()} key={this.state.order} />
+        }
+
       </Card>
     );
   }
