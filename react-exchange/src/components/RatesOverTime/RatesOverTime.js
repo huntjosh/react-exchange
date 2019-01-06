@@ -3,7 +3,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import { Row, Col, Card, Select } from 'antd';
 import { withStyles } from '@material-ui/styles';
-import CurrencyTable from '../CurrencyTable/CurrencyTable';
+import CurrencyTable from '../UI/CurrencyTable/CurrencyTable';
 import ExchangeRates from '../../api/ExchangeRates';
 import CurrencyPicker from '../UI/CurrencyPicker/CurrencyPicker';
 

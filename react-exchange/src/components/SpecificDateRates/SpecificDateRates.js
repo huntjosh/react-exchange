@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Row, Col, Card, DatePicker } from 'antd';
 import { withStyles } from '@material-ui/styles';
 import ExchangeRates from '../../api/ExchangeRates';
-import CurrencyTable from '../CurrencyTable/CurrencyTable';
+import CurrencyTable from '../UI/CurrencyTable/CurrencyTable';
 
 const styles = theme => ({
   header: {

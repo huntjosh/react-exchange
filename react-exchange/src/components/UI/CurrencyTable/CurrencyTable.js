@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Rate from '../../models/Rate';
-import CurrencyRow from '../UI/CurrencyRow/CurrencyRow';
+import Rate from '../../../models/Rate';
+import CurrencyRow from '../CurrencyRow/CurrencyRow';
 
 // Here we will use PureComponent, as we don't have state,
 // but we do want to avoid re-renders if the rates are the same
