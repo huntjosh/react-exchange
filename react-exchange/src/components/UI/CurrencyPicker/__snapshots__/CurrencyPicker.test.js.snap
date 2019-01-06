@@ -3,7 +3,7 @@
 exports[`renders currency picker 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CurrencyPicker />,
+  Symbol(enzyme.__unrendered__): <ForwardRef />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,25 +15,495 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": "Currency Picker",
+      "children": [Function],
     },
     "ref": null,
-    "rendered": "Currency Picker",
-    "type": "div",
+    "rendered": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": Object {
+        "$$typeof": Symbol(react.context),
+        "Consumer": [Circular],
+        "Provider": Object {
+          "$$typeof": Symbol(react.provider),
+          "_context": [Circular],
+        },
+        "_calculateChangedBits": null,
+        "_currentRenderer": null,
+        "_currentRenderer2": null,
+        "_currentValue": Object {
+          "disableGeneration": false,
+          "generateClassName": [Function],
+          "jss": Jss {
+            "generateId": [Function],
+            "id": 1,
+            "options": Object {
+              "Renderer": [Function],
+              "createGenerateId": [Function],
+              "plugins": Array [],
+            },
+            "plugins": PluginsRegistry {
+              "plugins": Object {
+                "external": Array [
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessStyle": [Function],
+                    "onUpdate": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessRule": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessRule": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                ],
+                "internal": Array [
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                ],
+              },
+              "registry": Object {
+                "onChangeValue": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onCreateRule": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onProcessRule": Array [
+                  [Function],
+                  [Function],
+                ],
+                "onProcessSheet": Array [],
+                "onProcessStyle": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onUpdate": Array [
+                  [Function],
+                ],
+              },
+            },
+            "version": "10.0.0-alpha.5",
+          },
+          "sheetsCache": null,
+          "sheetsManager": Map {},
+          "sheetsRegistry": null,
+        },
+        "_currentValue2": Object {
+          "disableGeneration": false,
+          "generateClassName": [Function],
+          "jss": Jss {
+            "generateId": [Function],
+            "id": 1,
+            "options": Object {
+              "Renderer": [Function],
+              "createGenerateId": [Function],
+              "plugins": Array [],
+            },
+            "plugins": PluginsRegistry {
+              "plugins": Object {
+                "external": Array [
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessStyle": [Function],
+                    "onUpdate": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessRule": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onChangeValue": [Function],
+                    "onProcessRule": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onProcessStyle": [Function],
+                  },
+                ],
+                "internal": Array [
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                    "onProcessStyle": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                  Object {
+                    "onCreateRule": [Function],
+                  },
+                ],
+              },
+              "registry": Object {
+                "onChangeValue": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onCreateRule": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onProcessRule": Array [
+                  [Function],
+                  [Function],
+                ],
+                "onProcessSheet": Array [],
+                "onProcessStyle": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onUpdate": Array [
+                  [Function],
+                ],
+              },
+            },
+            "version": "10.0.0-alpha.5",
+          },
+          "sheetsCache": null,
+          "sheetsManager": Map {},
+          "sheetsRegistry": null,
+        },
+        "_threadCount": 0,
+      },
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": "Currency Picker",
+        "children": [Function],
       },
       "ref": null,
-      "rendered": "Currency Picker",
-      "type": "div",
+      "rendered": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": Object {
+          "$$typeof": Symbol(react.context),
+          "Consumer": [Circular],
+          "Provider": Object {
+            "$$typeof": Symbol(react.provider),
+            "_context": [Circular],
+          },
+          "_calculateChangedBits": null,
+          "_currentRenderer": null,
+          "_currentRenderer2": null,
+          "_currentValue": Object {
+            "disableGeneration": false,
+            "generateClassName": [Function],
+            "jss": Jss {
+              "generateId": [Function],
+              "id": 1,
+              "options": Object {
+                "Renderer": [Function],
+                "createGenerateId": [Function],
+                "plugins": Array [],
+              },
+              "plugins": PluginsRegistry {
+                "plugins": Object {
+                  "external": Array [
+                    Object {
+                      "onCreateRule": [Function],
+                      "onProcessStyle": [Function],
+                      "onUpdate": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                      "onProcessRule": [Function],
+                    },
+                    Object {
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onChangeValue": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onChangeValue": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onChangeValue": [Function],
+                      "onProcessRule": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onProcessStyle": [Function],
+                    },
+                  ],
+                  "internal": Array [
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                  ],
+                },
+                "registry": Object {
+                  "onChangeValue": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onCreateRule": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onProcessRule": Array [
+                    [Function],
+                    [Function],
+                  ],
+                  "onProcessSheet": Array [],
+                  "onProcessStyle": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onUpdate": Array [
+                    [Function],
+                  ],
+                },
+              },
+              "version": "10.0.0-alpha.5",
+            },
+            "sheetsCache": null,
+            "sheetsManager": Map {},
+            "sheetsRegistry": null,
+          },
+          "_currentValue2": Object {
+            "disableGeneration": false,
+            "generateClassName": [Function],
+            "jss": Jss {
+              "generateId": [Function],
+              "id": 1,
+              "options": Object {
+                "Renderer": [Function],
+                "createGenerateId": [Function],
+                "plugins": Array [],
+              },
+              "plugins": PluginsRegistry {
+                "plugins": Object {
+                  "external": Array [
+                    Object {
+                      "onCreateRule": [Function],
+                      "onProcessStyle": [Function],
+                      "onUpdate": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                      "onProcessRule": [Function],
+                    },
+                    Object {
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onChangeValue": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onChangeValue": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onChangeValue": [Function],
+                      "onProcessRule": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onProcessStyle": [Function],
+                    },
+                  ],
+                  "internal": Array [
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                      "onProcessStyle": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                    Object {
+                      "onCreateRule": [Function],
+                    },
+                  ],
+                },
+                "registry": Object {
+                  "onChangeValue": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onCreateRule": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onProcessRule": Array [
+                    [Function],
+                    [Function],
+                  ],
+                  "onProcessSheet": Array [],
+                  "onProcessStyle": Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                    [Function],
+                  ],
+                  "onUpdate": Array [
+                    [Function],
+                  ],
+                },
+              },
+              "version": "10.0.0-alpha.5",
+            },
+            "sheetsCache": null,
+            "sheetsManager": Map {},
+            "sheetsRegistry": null,
+          },
+          "_threadCount": 0,
+        },
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

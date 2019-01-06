@@ -1,20 +1,18 @@
-async function overTime() {
-  return {
-    rates: {
-      '2018-08-18': {
-        USD: 1.2388,
-      },
-      '2018-08-17': {
-        USD: 1.250,
-      },
-      '2018-08-16': {
-        USD: 1.267,
-      },
-      '2018-08-15': {
-        USD: 1.256,
-      },
-    },
-  };
+const baseUrl = 'https://api.exchangeratesapi.io/';
+
+const currencies = {
+  USD: 'USD',
+  EUR: 'EUR',
+  NZD: 'NZD',
+  AUD: 'AUD',
+};
+
+async function overTime(startDate, endDate, base, symbol) {
+  const startDateString = startDate.format('YYYY-MM-DD');
+  const endDateString = endDate.format('YYYY-MM-DD');
+
+  return fetch(`${baseUrl}history?start_at=${startDateString}&end_at=${endDateString}&base=${base}&symbols=${symbol}`)
+    .then(response => response.json());
 }
 
 async function specificDate() {
@@ -28,4 +26,4 @@ async function specificDate() {
   };
 }
 
-export default { overTime, specificDate };
+export default { overTime, specificDate, currencies };
