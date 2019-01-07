@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/styles';
 import CurrencyTable from '../UI/CurrencyTable/CurrencyTable';
 import ExchangeRates from '../../api/ExchangeRates';
 import CurrencyPicker from '../UI/CurrencyPicker/CurrencyPicker';
+import Theme from '../../Theme';
 
 const { Option } = Select;
 
@@ -13,21 +14,6 @@ const orderOptions = [
   { value: 'desc', label: 'Descending' },
   { value: 'asc', label: 'Ascending' },
 ];
-
-const styles = theme => ({
-  centeredContent: {
-    textAlign: 'center',
-  },
-  orderSelect: {
-    width: 150,
-    marginBottom: theme.mediumSpacing,
-  },
-  centered: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-  },
-});
 
 class RatesOverTime extends Component {
   constructor(props) {
@@ -68,8 +54,8 @@ class RatesOverTime extends Component {
   updateRatesPerDate() {
     // Just picking an arbitrary 4 days, as we want to make sure the data exists in the API
     ExchangeRates.overTime(
-      moment().subtract(6, 'days'),
-      moment().subtract(2, 'days'),
+      moment().subtract(10, 'days'),
+      moment().subtract(1, 'days'),
       this.state.baseCurrency,
       this.state.vsCurrency,
     )
@@ -136,7 +122,7 @@ class RatesOverTime extends Component {
         <Col span={4}>
           <Select
             defaultValue={this.state.order}
-            className={classes.orderSelect}
+            className={classes.select}
             onChange={this.handleOrderChange}
           >
             { orderOptions.map(option =>
@@ -169,4 +155,4 @@ RatesOverTime.propTypes = {
   classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
-export default withStyles(styles)(RatesOverTime);
+export default withStyles(Theme)(RatesOverTime);

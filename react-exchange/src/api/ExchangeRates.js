@@ -5,6 +5,7 @@ const currencies = {
   EUR: 'EUR',
   NZD: 'NZD',
   AUD: 'AUD',
+  CNY: 'CNY',
 };
 
 async function overTime(startDate, endDate, base, symbol) {
@@ -15,15 +16,12 @@ async function overTime(startDate, endDate, base, symbol) {
     .then(response => response.json());
 }
 
-async function specificDate() {
-  return {
-    rates: {
-      USD: 1.2388,
-      NZD: 2.311,
-      YUAN: 8.920,
-      AUD: 2.290,
-    },
-  };
+async function specificDate(date, base, symbols) {
+  const dateString = date.format('YYYY-MM-DD');
+  const symbolsString = symbols.join(',');
+
+  return fetch(`${baseUrl}history?start_at=${dateString}&end_at=${dateString}&base=${base}&symbols=${symbolsString}`)
+    .then(response => response.json());
 }
 
 export default { overTime, specificDate, currencies };
